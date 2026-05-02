@@ -4,7 +4,7 @@ Premium medical aesthetics website built for deployment-ready marketing pages.
 ## Structure
 
 - `web/index.html`: production-ready static homepage
-- `web/assets/hero-medspa.png`: generated hero image for the brand
+- `web/assets/hero-medspa.jpg`: generated hero image for the brand
 
 ## Preview
 
