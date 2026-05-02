@@ -185,6 +185,10 @@
         transition: transform 180ms ease;
       }
 
+      .nav a:first-child::after {
+        transform: scaleX(1);
+      }
+
       .nav a:hover::after,
       .nav a:focus-visible::after {
         transform: scaleX(1);
@@ -214,12 +218,14 @@
         background: rgba(255, 255, 255, 0.76);
         border-color: rgba(167, 129, 87, 0.16);
         color: #6c5846;
+        min-width: 194px;
       }
 
       .cta-pill {
         background: linear-gradient(135deg, var(--brand), var(--brand-deep));
         color: #fffefc;
         box-shadow: 0 18px 32px rgba(167, 129, 87, 0.22);
+        min-width: 156px;
       }
 
       .ghost-pill {
@@ -234,12 +240,10 @@
 
       .hero-shell {
         position: relative;
-        min-height: 720px;
+        min-height: 745px;
         border-radius: 42px;
         overflow: hidden;
-        background:
-          linear-gradient(90deg, rgba(255, 252, 248, 0.92) 0%, rgba(255, 251, 247, 0.88) 45%, rgba(248, 236, 223, 0.82) 100%),
-          url("./assets/interior-lobby.jpg") center/cover no-repeat;
+        background: url("./assets/hero-medspa.jpg") right center/cover no-repeat;
         box-shadow: var(--shadow-lg);
         border: 1px solid rgba(167, 129, 87, 0.12);
       }
@@ -249,32 +253,30 @@
         position: absolute;
         inset: 0;
         background:
-          linear-gradient(90deg, rgba(255, 252, 248, 0.94) 0 46%, rgba(255, 252, 248, 0.56) 58%, rgba(255, 252, 248, 0) 72%),
-          radial-gradient(circle at 74% 26%, rgba(255, 255, 255, 0.52), transparent 18%);
+          linear-gradient(90deg, rgba(255, 252, 248, 0.96) 0 32%, rgba(255, 252, 248, 0.88) 44%, rgba(255, 252, 248, 0.4) 60%, rgba(255, 252, 248, 0.05) 76%),
+          radial-gradient(circle at 18% 48%, rgba(255, 255, 255, 0.45), transparent 26%),
+          radial-gradient(circle at 84% 16%, rgba(255, 245, 234, 0.28), transparent 22%);
       }
 
       .hero-grid {
         position: relative;
         z-index: 1;
-        display: grid;
-        grid-template-columns: minmax(0, 1.02fr) minmax(420px, 0.98fr);
-        gap: 18px;
-        min-height: 720px;
-        padding: 42px 46px 126px;
+        min-height: 745px;
+        padding: 56px 56px 148px;
       }
 
       .hero-copy {
         align-self: center;
-        max-width: 560px;
-        padding-top: 22px;
+        max-width: 650px;
+        padding-top: 74px;
       }
 
       .hero-copy h1 {
         margin: 0 0 22px;
-        font-size: clamp(46px, 5vw, 72px);
-        line-height: 1.1;
+        font-size: clamp(58px, 5.3vw, 84px);
+        line-height: 1.08;
         font-weight: 600;
-        letter-spacing: 0.02em;
+        letter-spacing: 0.01em;
       }
 
       .hero-copy h1 span {
@@ -286,8 +288,8 @@
         margin: 0;
         font-family: "Source Han Sans SC", "Noto Sans SC", sans-serif;
         color: var(--muted);
-        font-size: 16px;
-        line-height: 1.85;
+        font-size: 17px;
+        line-height: 1.9;
       }
 
       .bullet-row {
@@ -316,7 +318,8 @@
       }
 
       .hero-subcopy {
-        margin-top: 18px;
+        margin-top: 10px;
+        max-width: 760px;
       }
 
       .hero-buttons {
@@ -326,39 +329,20 @@
         margin-top: 34px;
       }
 
-      .hero-visual {
-        position: relative;
-        min-height: 100%;
-      }
-
-      .portrait-wrap {
-        position: absolute;
-        right: -10px;
-        bottom: 0;
-        width: min(620px, 100%);
-      }
-
-      .portrait-wrap img {
-        width: 100%;
-        object-fit: cover;
-        object-position: center top;
-        filter: drop-shadow(0 20px 50px rgba(110, 80, 49, 0.18));
-      }
-
       .hero-trust {
         position: absolute;
         left: 28px;
         right: 28px;
-        bottom: 24px;
+        bottom: 18px;
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 14px;
-        padding: 18px 20px;
-        border-radius: 24px;
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(16px);
+        padding: 20px 24px;
+        border-radius: 26px;
+        background: rgba(255, 255, 255, 0.78);
+        backdrop-filter: blur(18px);
         border: 1px solid rgba(199, 160, 106, 0.14);
-        box-shadow: 0 16px 30px rgba(122, 92, 66, 0.08);
+        box-shadow: 0 18px 34px rgba(122, 92, 66, 0.09);
       }
 
       .trust-item {
@@ -400,7 +384,7 @@
       }
 
       .stats {
-        padding: 12px 0 34px;
+        padding: 8px 0 34px;
       }
 
       .stats-grid {
@@ -877,7 +861,6 @@
           display: none;
         }
 
-        .hero-grid,
         .doctor-grid,
         .contact-banner,
         .footer-grid {
@@ -890,14 +873,7 @@
 
         .hero-grid {
           min-height: unset;
-          padding-bottom: 150px;
-        }
-
-        .portrait-wrap {
-          position: relative;
-          width: min(480px, 100%);
-          margin: 0 auto;
-          right: auto;
+          padding: 36px 28px 162px;
         }
 
         .hero-trust,
@@ -938,7 +914,7 @@
         }
 
         .hero-grid {
-          padding: 30px 20px 214px;
+          padding: 32px 20px 222px;
         }
 
         .hero-copy h1,
@@ -946,6 +922,11 @@
         .doctor-info h2,
         .contact-copy h2 {
           font-size: 34px;
+        }
+
+        .hero-copy {
+          max-width: 100%;
+          padding-top: 24px;
         }
 
         .hero-trust,
@@ -1020,10 +1001,7 @@
             <div class="hero-shell">
               <div class="hero-grid">
                 <div class="hero-copy">
-                  <h1>
-                    自然之美 由内而外
-                    <span>定制属于你的高级美</span>
-                  </h1>
+                  <h1>自然之美 由内而外<span>定制属于你的高级美</span></h1>
 
                   <div class="bullet-row">
                     <span>医疗级安全</span>
@@ -1042,12 +1020,6 @@
                   <div class="hero-buttons">
                     <a class="cta-pill" href="#contact">在线预约</a>
                     <a class="ghost-pill" href="#services">了解项目</a>
-                  </div>
-                </div>
-
-                <div class="hero-visual">
-                  <div class="portrait-wrap">
-                    <img src="./assets/hero-medspa.jpg" alt="医美女性形象视觉" />
                   </div>
                 </div>
               </div>
