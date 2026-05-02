@@ -3,35 +3,36 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>曜美医疗美容 | 专业医美定制中心</title>
+    <title>曜美医疗美容 | 高端医美定制中心</title>
     <meta
       name="description"
-      content="曜美医疗美容，专注面部年轻化、皮肤管理与轻医美定制。以专业面诊、精细方案和高标准服务，打造更安心的医美体验。"
+      content="曜美医疗美容官方网站，专注面部年轻化、肤质精修、轮廓定制与高端私密面诊体验。"
     />
-    <meta name="theme-color" content="#f7f2eb" />
-    <meta property="og:title" content="曜美医疗美容 | 专业医美定制中心" />
+    <meta property="og:title" content="曜美医疗美容 | 高端医美定制中心" />
     <meta
       property="og:description"
-      content="专业面诊、轻奢空间与个性化变美方案，打造高信任感医美官网。"
+      content="以完整官网 UI 设计打造的高端医美品牌官网，突出专业信任、审美表达与预约转化。"
     />
     <meta property="og:image" content="./assets/hero-medspa.jpg" />
+    <meta name="theme-color" content="#f7f0e8" />
     <style>
       :root {
-        --bg: #fbf7f1;
-        --bg-strong: #f4ede5;
-        --surface: rgba(255, 255, 255, 0.82);
-        --surface-strong: rgba(255, 255, 255, 0.95);
-        --text: #2f2925;
-        --muted: #766a62;
-        --line: rgba(83, 67, 55, 0.13);
-        --brand: #b98c66;
-        --brand-deep: #8d6748;
-        --accent: #efe3d2;
-        --shadow: 0 28px 80px rgba(97, 74, 56, 0.12);
-        --radius-xl: 32px;
+        --bg: #faf6f0;
+        --bg-deep: #f2e8dd;
+        --surface: rgba(255, 255, 255, 0.8);
+        --surface-strong: rgba(255, 255, 255, 0.94);
+        --text: #2c2723;
+        --muted: #786d65;
+        --line: rgba(98, 77, 61, 0.12);
+        --brand: #b78760;
+        --brand-deep: #8f684b;
+        --brand-soft: #ead7c2;
+        --shadow-lg: 0 30px 80px rgba(98, 77, 61, 0.14);
+        --shadow-md: 0 18px 44px rgba(98, 77, 61, 0.1);
+        --radius-xl: 34px;
         --radius-lg: 24px;
         --radius-md: 18px;
-        --container: min(1180px, calc(100vw - 40px));
+        --container: min(1220px, calc(100vw - 40px));
       }
 
       * {
@@ -44,12 +45,12 @@
 
       body {
         margin: 0;
-        font-family: "Source Han Sans SC", "Noto Sans SC", "PingFang SC", sans-serif;
         color: var(--text);
+        font-family: "Source Han Sans SC", "Noto Sans SC", "PingFang SC", sans-serif;
         background:
-          radial-gradient(circle at top left, rgba(255, 255, 255, 0.96), transparent 30%),
-          radial-gradient(circle at right 15%, rgba(233, 214, 191, 0.5), transparent 28%),
-          linear-gradient(180deg, #fdfaf6 0%, #f8f1e8 40%, #f8f2ec 100%);
+          radial-gradient(circle at top right, rgba(238, 221, 203, 0.9), transparent 30%),
+          radial-gradient(circle at left 30%, rgba(255, 255, 255, 0.96), transparent 35%),
+          linear-gradient(180deg, #fdfaf7 0%, #f7f0e8 48%, #f8f3ee 100%);
       }
 
       img {
@@ -62,33 +63,39 @@
         text-decoration: none;
       }
 
-      .shell {
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      .page {
         position: relative;
         overflow: hidden;
       }
 
-      .shell::before,
-      .shell::after {
+      .page::before,
+      .page::after {
         content: "";
         position: fixed;
-        inset: auto;
         width: 42vw;
         height: 42vw;
+        border-radius: 999px;
         pointer-events: none;
+        filter: blur(24px);
         z-index: 0;
-        filter: blur(12px);
       }
 
-      .shell::before {
-        top: -14vw;
+      .page::before {
+        top: -10vw;
         right: -10vw;
-        background: radial-gradient(circle, rgba(232, 213, 191, 0.8) 0%, transparent 64%);
+        background: rgba(235, 214, 194, 0.72);
       }
 
-      .shell::after {
+      .page::after {
         bottom: -14vw;
-        left: -10vw;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.85) 0%, transparent 64%);
+        left: -8vw;
+        background: rgba(255, 255, 255, 0.82);
       }
 
       .container {
@@ -99,20 +106,20 @@
       }
 
       .topbar {
-        padding: 22px 0;
         position: sticky;
         top: 0;
-        z-index: 20;
-        backdrop-filter: blur(20px);
-        background: rgba(251, 247, 241, 0.64);
-        border-bottom: 1px solid rgba(83, 67, 55, 0.05);
+        z-index: 30;
+        backdrop-filter: blur(18px);
+        background: rgba(250, 246, 240, 0.68);
+        border-bottom: 1px solid rgba(98, 77, 61, 0.06);
       }
 
       .topbar-inner {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 24px;
+        gap: 20px;
+        min-height: 84px;
       }
 
       .brand {
@@ -121,43 +128,46 @@
         gap: 14px;
       }
 
-      .brand-mark {
-        width: 42px;
-        height: 42px;
-        border-radius: 14px;
-        background:
-          linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(232, 214, 191, 0.75)),
-          var(--accent);
-        border: 1px solid rgba(185, 140, 102, 0.35);
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      .brand-badge {
+        width: 46px;
+        height: 46px;
+        border-radius: 16px;
         position: relative;
+        background:
+          linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(234, 215, 194, 0.88)),
+          var(--brand-soft);
+        border: 1px solid rgba(183, 135, 96, 0.3);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
       }
 
-      .brand-mark::before,
-      .brand-mark::after {
+      .brand-badge::before,
+      .brand-badge::after {
         content: "";
         position: absolute;
-        inset: 9px;
         border-radius: 999px 999px 0 999px;
-        border: 2px solid rgba(141, 103, 72, 0.88);
         transform: rotate(45deg);
       }
 
-      .brand-mark::after {
-        inset: 14px 14px 8px 8px;
-        border-color: rgba(185, 140, 102, 0.78);
+      .brand-badge::before {
+        inset: 10px;
+        border: 2px solid rgba(143, 104, 75, 0.92);
       }
 
-      .brand-copy strong {
+      .brand-badge::after {
+        inset: 15px 15px 9px 9px;
+        border: 2px solid rgba(183, 135, 96, 0.82);
+      }
+
+      .brand-text strong {
         display: block;
-        font-size: 16px;
-        letter-spacing: 0.18em;
+        letter-spacing: 0.16em;
+        font-size: 17px;
       }
 
-      .brand-copy span {
+      .brand-text span {
         color: var(--muted);
         font-size: 12px;
-        letter-spacing: 0.22em;
+        letter-spacing: 0.2em;
         text-transform: uppercase;
       }
 
@@ -169,73 +179,80 @@
         font-size: 14px;
       }
 
-      .cta,
-      .cta-ghost {
+      .btn,
+      .btn-secondary {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-height: 52px;
-        padding: 0 24px;
+        min-height: 54px;
+        padding: 0 26px;
         border-radius: 999px;
-        font-weight: 700;
+        border: 0;
+        cursor: pointer;
         transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
       }
 
-      .cta {
-        color: #fffaf5;
-        background: linear-gradient(135deg, #be9068, #8d6748);
-        box-shadow: 0 18px 38px rgba(141, 103, 72, 0.22);
-      }
-
-      .cta:hover,
-      .cta-ghost:hover {
+      .btn:hover,
+      .btn-secondary:hover {
         transform: translateY(-2px);
       }
 
-      .cta-ghost {
-        border: 1px solid rgba(141, 103, 72, 0.22);
+      .btn {
+        color: #fff9f3;
+        background: linear-gradient(135deg, var(--brand), var(--brand-deep));
+        box-shadow: 0 18px 40px rgba(143, 104, 75, 0.26);
+        font-weight: 700;
+      }
+
+      .btn-secondary {
         background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(143, 104, 75, 0.18);
         color: var(--text);
+        font-weight: 700;
       }
 
       .hero {
-        padding: 42px 0 88px;
+        padding: 34px 0 88px;
       }
 
-      .hero-panel {
+      .hero-grid {
         display: grid;
-        grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
-        gap: 28px;
-        align-items: stretch;
+        grid-template-columns: minmax(0, 1.04fr) minmax(420px, 0.96fr);
+        gap: 24px;
       }
 
+      .panel,
       .hero-copy,
-      .hero-visual {
-        border: 1px solid rgba(185, 140, 102, 0.16);
+      .hero-media,
+      .stat-card,
+      .service-card,
+      .doctor-card,
+      .quote-card,
+      .gallery-card,
+      .timeline-card,
+      .faq-card,
+      .contact-card {
         border-radius: var(--radius-xl);
-        box-shadow: var(--shadow);
-        overflow: hidden;
+        background: var(--surface);
+        border: 1px solid rgba(183, 135, 96, 0.12);
+        box-shadow: var(--shadow-lg);
       }
 
       .hero-copy {
+        padding: 44px;
         background:
-          linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(255, 247, 239, 0.82)),
-          var(--surface);
-        padding: 48px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+          linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 247, 240, 0.86)),
+          var(--surface-strong);
       }
 
       .eyebrow {
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        width: fit-content;
-        padding: 10px 14px;
+        padding: 10px 16px;
         border-radius: 999px;
-        border: 1px solid rgba(141, 103, 72, 0.18);
-        background: rgba(255, 255, 255, 0.66);
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(143, 104, 75, 0.16);
         color: var(--brand-deep);
         font-size: 12px;
         font-weight: 800;
@@ -248,30 +265,31 @@
         width: 8px;
         height: 8px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #d7b89a, #9c6f4f);
-        box-shadow: 0 0 0 4px rgba(215, 184, 154, 0.24);
+        background: linear-gradient(135deg, #dcb896, #9b704d);
+        box-shadow: 0 0 0 4px rgba(220, 184, 150, 0.24);
       }
 
       h1,
       h2,
-      h3 {
-        font-family: "Source Han Serif SC", "Noto Serif SC", "Songti SC", serif;
+      h3,
+      h4 {
         margin: 0;
+        font-family: "Source Han Serif SC", "Noto Serif SC", "Songti SC", serif;
       }
 
       h1 {
-        font-size: clamp(40px, 6vw, 72px);
-        line-height: 1.08;
-        letter-spacing: -0.03em;
-        margin-top: 22px;
+        margin-top: 24px;
+        font-size: clamp(42px, 5.8vw, 74px);
+        line-height: 1.06;
+        letter-spacing: -0.04em;
       }
 
       .hero-subtitle {
-        margin-top: 20px;
-        max-width: 580px;
-        font-size: 18px;
-        line-height: 1.8;
+        margin: 20px 0 0;
         color: var(--muted);
+        line-height: 1.9;
+        font-size: 18px;
+        max-width: 580px;
       }
 
       .hero-actions {
@@ -281,88 +299,88 @@
         margin-top: 30px;
       }
 
-      .hero-notes {
+      .trust-row {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 14px;
-        margin-top: 42px;
+        margin-top: 34px;
       }
 
-      .hero-note {
-        padding: 18px;
-        border-radius: 20px;
-        background: rgba(255, 255, 255, 0.66);
-        border: 1px solid rgba(141, 103, 72, 0.12);
+      .trust-pill {
+        padding: 18px 18px 16px;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.74);
+        border: 1px solid rgba(143, 104, 75, 0.12);
+        box-shadow: var(--shadow-md);
       }
 
-      .hero-note strong {
+      .trust-pill strong {
         display: block;
         font-size: 14px;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
       }
 
-      .hero-note span {
+      .trust-pill span {
         color: var(--muted);
-        line-height: 1.6;
         font-size: 13px;
+        line-height: 1.6;
       }
 
-      .hero-visual {
+      .hero-media {
         position: relative;
-        min-height: 760px;
-        background:
-          linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(46, 36, 29, 0.04)),
-          var(--bg-strong);
+        min-height: 790px;
+        overflow: hidden;
+        background: #f0e5d9;
       }
 
-      .hero-visual img {
+      .hero-media img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
 
-      .hero-badge,
-      .hero-floating-card {
+      .hero-card,
+      .hero-chip {
         position: absolute;
         backdrop-filter: blur(16px);
-        background: rgba(255, 255, 255, 0.76);
-        border: 1px solid rgba(141, 103, 72, 0.12);
-        box-shadow: 0 18px 50px rgba(86, 64, 49, 0.12);
+        background: rgba(255, 255, 255, 0.74);
+        border: 1px solid rgba(143, 104, 75, 0.12);
+        box-shadow: var(--shadow-md);
       }
 
-      .hero-badge {
+      .hero-chip {
         top: 26px;
         left: 26px;
-        border-radius: 999px;
         padding: 14px 18px;
+        border-radius: 999px;
         color: var(--brand-deep);
         font-size: 13px;
         font-weight: 700;
       }
 
-      .hero-floating-card {
-        right: 26px;
-        bottom: 26px;
-        width: 280px;
+      .hero-card {
+        right: 24px;
+        bottom: 24px;
+        width: 320px;
         padding: 22px;
-        border-radius: 24px;
+        border-radius: 26px;
       }
 
-      .hero-floating-card strong {
+      .hero-card strong {
+        display: block;
         font-size: 18px;
+        line-height: 1.5;
       }
 
-      .hero-floating-card p {
+      .hero-card p {
         margin: 10px 0 0;
         color: var(--muted);
-        font-size: 14px;
         line-height: 1.75;
+        font-size: 14px;
       }
 
       section {
-        padding: 26px 0 86px;
-        position: relative;
-        z-index: 1;
+        padding: 0 0 86px;
       }
 
       .section-head {
@@ -373,35 +391,22 @@
         margin-bottom: 28px;
       }
 
-      .section-head p {
-        max-width: 560px;
-        margin: 12px 0 0;
-        color: var(--muted);
-        line-height: 1.8;
-      }
-
       .section-head h2 {
-        font-size: clamp(28px, 4vw, 46px);
-        line-height: 1.18;
+        font-size: clamp(30px, 4vw, 48px);
+        line-height: 1.16;
       }
 
-      .stats {
+      .section-head p {
+        margin: 14px 0 0;
+        max-width: 560px;
+        color: var(--muted);
+        line-height: 1.85;
+      }
+
+      .stats-grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 18px;
-      }
-
-      .stat-card,
-      .service-card,
-      .trust-card,
-      .journey-card,
-      .faq-item,
-      .contact-card,
-      .quote-card {
-        border-radius: var(--radius-lg);
-        border: 1px solid rgba(141, 103, 72, 0.12);
-        background: var(--surface);
-        box-shadow: var(--shadow);
       }
 
       .stat-card {
@@ -410,33 +415,43 @@
 
       .stat-card strong {
         display: block;
-        font-size: 34px;
-        margin-bottom: 8px;
         color: var(--brand-deep);
+        font-size: 36px;
+        margin-bottom: 8px;
       }
 
       .stat-card span {
         color: var(--muted);
-        line-height: 1.65;
         font-size: 14px;
+        line-height: 1.7;
       }
 
-      .services {
+      .services-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
+        gap: 20px;
       }
 
       .service-card {
-        padding: 28px;
+        overflow: hidden;
+        background: var(--surface-strong);
+      }
+
+      .service-card img {
+        width: 100%;
+        height: 290px;
+        object-fit: cover;
+      }
+
+      .service-body {
+        padding: 26px;
       }
 
       .service-tag {
         display: inline-flex;
-        width: fit-content;
         padding: 8px 12px;
         border-radius: 999px;
-        background: rgba(239, 227, 210, 0.72);
+        background: rgba(234, 215, 194, 0.76);
         color: var(--brand-deep);
         font-size: 12px;
         font-weight: 800;
@@ -444,21 +459,21 @@
         text-transform: uppercase;
       }
 
-      .service-card h3 {
+      .service-body h3 {
         font-size: 28px;
         margin-top: 18px;
       }
 
-      .service-card p {
-        margin: 14px 0 0;
+      .service-body p {
+        margin: 12px 0 0;
         color: var(--muted);
         line-height: 1.85;
       }
 
       .service-list {
-        margin: 20px 0 0;
-        padding: 0;
         list-style: none;
+        padding: 0;
+        margin: 18px 0 0;
         display: grid;
         gap: 10px;
       }
@@ -466,7 +481,7 @@
       .service-list li {
         position: relative;
         padding-left: 18px;
-        color: var(--text);
+        line-height: 1.65;
       }
 
       .service-list li::before {
@@ -477,197 +492,225 @@
         width: 7px;
         height: 7px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #d7b89a, #9c6f4f);
+        background: linear-gradient(135deg, #dcb896, #9b704d);
       }
 
-      .trust-grid {
+      .doctor-layout {
         display: grid;
-        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-        gap: 18px;
-      }
-
-      .trust-card {
-        padding: 30px;
+        grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+        gap: 20px;
       }
 
       .doctor-card {
-        display: grid;
-        grid-template-columns: 110px minmax(0, 1fr);
-        gap: 22px;
-        align-items: center;
-      }
-
-      .doctor-avatar {
-        width: 110px;
-        height: 110px;
-        border-radius: 28px;
-        background:
-          radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.95), transparent 36%),
-          linear-gradient(135deg, rgba(185, 140, 102, 0.82), rgba(111, 81, 60, 0.92));
-        position: relative;
         overflow: hidden;
+        background: var(--surface-strong);
       }
 
-      .doctor-avatar::before {
-        content: "";
-        position: absolute;
-        inset: 16px 24px 42px;
-        border-radius: 999px 999px 24px 24px;
-        background: rgba(255, 250, 245, 0.9);
+      .doctor-grid {
+        display: grid;
+        grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.1fr);
+        gap: 0;
       }
 
-      .doctor-avatar::after {
-        content: "";
-        position: absolute;
-        inset: 62px 16px 14px;
-        border-radius: 24px;
-        background: rgba(255, 250, 245, 0.92);
+      .doctor-grid img {
+        width: 100%;
+        height: 100%;
+        min-height: 540px;
+        object-fit: cover;
       }
 
-      .doctor-meta h3 {
-        font-size: 30px;
+      .doctor-body {
+        padding: 34px;
       }
 
-      .doctor-meta p {
-        margin: 8px 0 0;
-        color: var(--muted);
-        line-height: 1.85;
-      }
-
-      .trust-points {
+      .doctor-meta {
         margin-top: 22px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .doctor-meta span {
+        display: inline-flex;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.74);
+        border: 1px solid rgba(143, 104, 75, 0.12);
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .doctor-body h3 {
+        margin-top: 22px;
+        font-size: 34px;
+      }
+
+      .doctor-body p {
+        margin: 14px 0 0;
+        color: var(--muted);
+        line-height: 1.9;
+      }
+
+      .bullet-grid {
         display: grid;
         gap: 14px;
+        margin-top: 24px;
       }
 
-      .trust-point {
-        padding: 16px 18px;
-        border-radius: 18px;
+      .bullet-card {
+        padding: 18px;
+        border-radius: 20px;
         background: rgba(255, 255, 255, 0.72);
-        border: 1px solid rgba(141, 103, 72, 0.1);
+        border: 1px solid rgba(143, 104, 75, 0.1);
       }
 
-      .trust-point strong {
+      .bullet-card strong {
         display: block;
         margin-bottom: 6px;
       }
 
-      .trust-point span {
+      .bullet-card span {
         color: var(--muted);
-        line-height: 1.75;
         font-size: 14px;
+        line-height: 1.75;
       }
 
       .quote-card {
-        padding: 30px;
+        padding: 34px;
         display: grid;
         gap: 22px;
+        background:
+          linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(244, 232, 221, 0.88)),
+          var(--surface-strong);
       }
 
       .quote-card blockquote {
         margin: 0;
-        font-family: "Source Han Serif SC", "Noto Serif SC", serif;
-        font-size: 28px;
-        line-height: 1.65;
+        font-size: 30px;
+        line-height: 1.62;
       }
 
       .quote-card p {
         margin: 0;
         color: var(--muted);
-        line-height: 1.8;
+        line-height: 1.85;
       }
 
-      .environment {
+      .gallery-grid {
         display: grid;
-        grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-        gap: 18px;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 20px;
       }
 
-      .environment-photo {
-        border-radius: var(--radius-xl);
+      .gallery-main,
+      .gallery-stack {
+        display: grid;
+        gap: 20px;
+      }
+
+      .gallery-card {
         overflow: hidden;
-        min-height: 620px;
-        box-shadow: var(--shadow);
-        border: 1px solid rgba(141, 103, 72, 0.12);
+        position: relative;
       }
 
-      .environment-photo img {
+      .gallery-card img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
 
-      .journey {
+      .gallery-large {
+        min-height: 560px;
+      }
+
+      .gallery-small {
+        min-height: 270px;
+      }
+
+      .gallery-label {
+        position: absolute;
+        left: 18px;
+        bottom: 18px;
+        padding: 12px 16px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.76);
+        backdrop-filter: blur(14px);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .timeline-grid {
         display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 18px;
       }
 
-      .journey-card {
+      .timeline-card {
         padding: 24px;
-        display: grid;
-        grid-template-columns: 76px minmax(0, 1fr);
-        gap: 18px;
+        background: var(--surface-strong);
       }
 
-      .journey-index {
-        width: 76px;
-        height: 76px;
+      .timeline-index {
+        width: 72px;
+        height: 72px;
         border-radius: 24px;
         display: grid;
         place-items: center;
-        background: linear-gradient(145deg, rgba(239, 227, 210, 0.9), rgba(255, 255, 255, 0.82));
+        background: linear-gradient(145deg, rgba(234, 215, 194, 0.94), rgba(255, 255, 255, 0.88));
         color: var(--brand-deep);
         font-size: 20px;
         font-weight: 900;
       }
 
-      .journey-card h3 {
+      .timeline-card h3 {
+        margin-top: 18px;
         font-size: 24px;
-        margin-bottom: 8px;
       }
 
-      .journey-card p {
-        margin: 0;
+      .timeline-card p {
+        margin: 12px 0 0;
         color: var(--muted);
         line-height: 1.8;
       }
 
-      .faq {
+      .faq-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 18px;
       }
 
-      .faq-item {
-        padding: 24px;
+      .faq-card {
+        padding: 22px 24px;
+        background: var(--surface-strong);
       }
 
-      .faq-item h3 {
+      .faq-card h3 {
         font-size: 22px;
       }
 
-      .faq-item p {
+      .faq-card p {
         margin: 12px 0 0;
         color: var(--muted);
-        line-height: 1.8;
+        line-height: 1.82;
       }
 
-      .contact {
+      .contact-grid {
         display: grid;
-        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-        gap: 18px;
+        grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+        gap: 20px;
       }
 
       .contact-card {
-        padding: 30px;
+        padding: 32px;
+        background: var(--surface-strong);
       }
 
       .contact-card h3 {
-        font-size: 28px;
+        font-size: 32px;
       }
 
       .contact-card p {
-        margin: 12px 0 0;
+        margin: 14px 0 0;
         color: var(--muted);
         line-height: 1.9;
       }
@@ -675,7 +718,7 @@
       .contact-list {
         display: grid;
         gap: 14px;
-        margin-top: 20px;
+        margin-top: 22px;
       }
 
       .contact-list span {
@@ -685,70 +728,93 @@
       }
 
       .contact-list strong {
-        min-width: 74px;
+        min-width: 78px;
         color: var(--brand-deep);
+      }
+
+      .contact-form {
+        margin-top: 24px;
+        display: grid;
+        gap: 14px;
+      }
+
+      .field-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .field {
+        width: 100%;
+        border: 1px solid rgba(143, 104, 75, 0.14);
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 18px;
+        padding: 16px 18px;
+        outline: none;
+      }
+
+      textarea.field {
+        min-height: 128px;
+        resize: vertical;
       }
 
       .contact-highlight {
         background:
-          linear-gradient(145deg, rgba(190, 144, 104, 0.18), rgba(255, 255, 255, 0.88)),
+          linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(237, 223, 208, 0.84)),
           var(--surface-strong);
       }
 
-      .contact-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 24px;
-      }
-
       .footer {
-        padding: 24px 0 46px;
-        color: var(--muted);
-        font-size: 14px;
+        padding: 10px 0 42px;
       }
 
       .footer-inner {
         display: flex;
         justify-content: space-between;
-        gap: 20px;
+        gap: 16px;
         padding-top: 24px;
-        border-top: 1px solid rgba(83, 67, 55, 0.08);
+        border-top: 1px solid rgba(98, 77, 61, 0.08);
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .floating-mobile {
+        display: none;
       }
 
       .reveal {
         opacity: 0;
-        transform: translateY(18px);
-        transition: opacity 700ms ease, transform 700ms ease;
+        transform: translateY(20px);
+        transition: opacity 720ms ease, transform 720ms ease;
       }
 
-      .reveal.is-visible {
+      .reveal.visible {
         opacity: 1;
         transform: translateY(0);
       }
 
-      @media (max-width: 1080px) {
-        .hero-panel,
-        .stats,
-        .services,
-        .trust-grid,
-        .environment,
-        .faq,
-        .contact {
+      @media (max-width: 1120px) {
+        .hero-grid,
+        .doctor-layout,
+        .gallery-grid,
+        .contact-grid,
+        .stats-grid,
+        .services-grid,
+        .timeline-grid,
+        .faq-grid {
           grid-template-columns: 1fr;
         }
 
-        .hero-notes {
+        .doctor-grid {
           grid-template-columns: 1fr;
         }
 
-        .hero-visual {
+        .trust-row {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-media {
           min-height: 580px;
-        }
-
-        .section-head {
-          flex-direction: column;
-          align-items: start;
         }
 
         .nav {
@@ -757,113 +823,125 @@
       }
 
       @media (max-width: 720px) {
-        .topbar {
-          padding: 16px 0;
+        .topbar-inner {
+          min-height: 76px;
         }
 
         .hero {
-          padding-top: 18px;
+          padding-top: 20px;
         }
 
         .hero-copy,
-        .trust-card,
-        .service-card,
-        .journey-card,
-        .faq-item,
-        .contact-card {
-          padding: 22px;
+        .doctor-body,
+        .quote-card,
+        .contact-card,
+        .service-body {
+          padding: 24px;
         }
 
-        .hero-copy {
-          padding-top: 26px;
+        .gallery-large {
+          min-height: 340px;
         }
 
-        .hero-visual {
-          min-height: 460px;
+        .gallery-small,
+        .doctor-grid img {
+          min-height: 240px;
         }
 
-        .hero-badge,
-        .hero-floating-card {
+        .hero-card,
+        .hero-chip {
           position: static;
+          width: auto;
           margin: 14px;
         }
 
-        .hero-floating-card {
-          width: auto;
-        }
-
-        .doctor-card,
-        .journey-card {
+        .field-row {
           grid-template-columns: 1fr;
         }
 
         .footer-inner {
           flex-direction: column;
         }
+
+        .floating-mobile {
+          display: flex;
+          position: sticky;
+          bottom: 14px;
+          z-index: 40;
+          justify-content: center;
+          margin-top: -10px;
+          padding-bottom: 14px;
+        }
+
+        .floating-mobile a {
+          min-width: min(92vw, 360px);
+        }
       }
     </style>
   </head>
   <body>
-    <div class="shell">
+    <div class="page">
       <header class="topbar">
         <div class="container topbar-inner">
           <a class="brand" href="#top">
-            <span class="brand-mark" aria-hidden="true"></span>
-            <span class="brand-copy">
+            <span class="brand-badge" aria-hidden="true"></span>
+            <span class="brand-text">
               <strong>曜美医疗美容</strong>
               <span>Premium Medical Aesthetics</span>
             </span>
           </a>
+
           <nav class="nav">
             <a href="#services">核心项目</a>
-            <a href="#trust">医生团队</a>
+            <a href="#doctor">专家团队</a>
+            <a href="#clinic">院内环境</a>
             <a href="#journey">服务流程</a>
             <a href="#faq">常见问题</a>
           </nav>
-          <a class="cta" href="#contact">预约面诊</a>
+
+          <a class="btn" href="#contact">立即预约</a>
         </div>
       </header>
 
       <main id="top">
         <section class="hero">
-          <div class="container hero-panel">
+          <div class="container hero-grid">
             <div class="hero-copy reveal">
-              <div>
-                <div class="eyebrow">高端定制医美中心</div>
-                <h1>让变美这件事，回到专业与安心本身。</h1>
-                <p class="hero-subtitle">
-                  曜美医疗美容专注面部年轻化、皮肤管理与轻医美定制，以专业面诊、清晰方案与高标准服务流程，
-                  帮你在安全感和高级感之间，找到真正适合自己的变美路径。
-                </p>
-                <div class="hero-actions">
-                  <a class="cta" href="#contact">获取专属方案</a>
-                  <a class="cta-ghost" href="#services">查看核心项目</a>
-                </div>
+              <div class="eyebrow">Official Website UI</div>
+              <h1>为高意向客户打造的完整医美官方网站。</h1>
+              <p class="hero-subtitle">
+                这不是一张单独的美女图，而是一整套高端医美官网表达：
+                从品牌头图、核心项目、专家信任、院内环境到预约转化，全部围绕“专业、安心、审美在线”来组织。
+              </p>
+
+              <div class="hero-actions">
+                <a class="btn" href="#contact">获取专属面诊方案</a>
+                <a class="btn-secondary" href="#services">先看核心项目</a>
               </div>
 
-              <div class="hero-notes">
-                <div class="hero-note">
+              <div class="trust-row">
+                <div class="trust-pill">
                   <strong>专业面诊</strong>
-                  <span>先评估、后建议，强调个体差异与真实诉求。</span>
+                  <span>先评估基础状态与诉求，再决定项目方向。</span>
                 </div>
-                <div class="hero-note">
-                  <strong>轻奢环境</strong>
-                  <span>一对一接待与私密沟通，让咨询更从容。</span>
+                <div class="trust-pill">
+                  <strong>高端环境</strong>
+                  <span>私密咨询、轻奢空间和克制审美统一呈现。</span>
                 </div>
-                <div class="hero-note">
-                  <strong>方案透明</strong>
-                  <span>项目逻辑、护理节奏与恢复建议清晰可见。</span>
+                <div class="trust-pill">
+                  <strong>强转化结构</strong>
+                  <span>所有文案和按钮都围绕预约咨询来设计。</span>
                 </div>
               </div>
             </div>
 
-            <div class="hero-visual reveal">
-              <img src="./assets/hero-medspa.jpg" alt="曜美医疗美容主视觉" />
-              <div class="hero-badge">定制面诊 · 温和审美 · 高信任体验</div>
-              <div class="hero-floating-card">
-                <strong>从第一次咨询开始，建立安心感。</strong>
+            <div class="hero-media reveal">
+              <img src="./assets/hero-medspa.jpg" alt="曜美医疗美容官网头图" />
+              <div class="hero-chip">高端定制 · 温和审美 · 安心变美</div>
+              <div class="hero-card">
+                <strong>完整 UI 设计落地成真实官网，而不是只放一张图片。</strong>
                 <p>
-                  适合想做年轻化、皮肤精修与精致轮廓管理的高客单女性人群，追求自然、克制、长期主义的变美方式。
+                  页面按照品牌官网标准拆分成多个真实区块，适合用于投流落地、名片页、公众号菜单页和正式品牌官网首页。
                 </p>
               </div>
             </div>
@@ -871,23 +949,23 @@
         </section>
 
         <section>
-          <div class="container stats">
-            <div class="stat-card reveal">
+          <div class="container stats-grid">
+            <article class="stat-card reveal">
               <strong>1v1</strong>
-              <span>私密咨询流程，聚焦个人诉求与预算节奏。</span>
-            </div>
-            <div class="stat-card reveal">
-              <strong>3 大轴线</strong>
-              <span>年轻化、肤质焕亮、精致轮廓，分层规划更清晰。</span>
-            </div>
-            <div class="stat-card reveal">
-              <strong>全链路</strong>
-              <span>从面诊、治疗到术后管理，强调连续服务体验。</span>
-            </div>
-            <div class="stat-card reveal">
-              <strong>自然审美</strong>
-              <span>不追求夸张变化，更强调精修感与长期状态。</span>
-            </div>
+              <span>私密咨询与高意向客户接待逻辑，减少决策压力。</span>
+            </article>
+            <article class="stat-card reveal">
+              <strong>3 大主线</strong>
+              <span>面部年轻化、肤质管理、轮廓定制分层承接需求。</span>
+            </article>
+            <article class="stat-card reveal">
+              <strong>4 步流程</strong>
+              <span>预约、面诊、方案、术后管理，建立完整体验闭环。</span>
+            </article>
+            <article class="stat-card reveal">
+              <strong>高信任感</strong>
+              <span>专家、环境、FAQ 与 CTA 一起组成官网转化链路。</span>
+            </article>
           </div>
         </section>
 
@@ -896,106 +974,153 @@
             <div class="section-head reveal">
               <div>
                 <div class="eyebrow">Core Treatments</div>
-                <h2>围绕高频医美需求，做真正能承接转化的项目布局。</h2>
+                <h2>围绕用户最真实的医美需求，搭建完整服务矩阵。</h2>
               </div>
               <p>
-                页面结构按“理解需求 → 建立信任 → 给出方案 → 引导预约”设计，适合做官网首页、投流落地页和品牌介绍页。
+                这一段按完整官网 UI 的标准做成了真实服务区，不是简单三栏文字。
+                每张卡片都带有视觉、方向、卖点和项目说明，方便后续继续扩展成详情页。
               </p>
             </div>
 
-            <div class="services">
+            <div class="services-grid">
               <article class="service-card reveal">
-                <span class="service-tag">Face Renewal</span>
-                <h3>面部年轻化</h3>
-                <p>
-                  聚焦松弛、轮廓感、疲态感与面部精致度，通过分层评估做更自然的年轻化表达。
-                </p>
-                <ul class="service-list">
-                  <li>轻医美年轻化方案定制</li>
-                  <li>轮廓支撑与状态感提升</li>
-                  <li>更适合长期维护的节奏安排</li>
-                </ul>
+                <img src="./assets/service-face.jpg" alt="面部年轻化服务图" />
+                <div class="service-body">
+                  <span class="service-tag">Face Renewal</span>
+                  <h3>面部年轻化</h3>
+                  <p>针对松弛、疲态感、面部支撑感不足与整体状态下滑，做更自然、耐看的年轻化表达。</p>
+                  <ul class="service-list">
+                    <li>精细化面部层次评估</li>
+                    <li>状态感与轮廓支撑并重</li>
+                    <li>适合长期维护的节奏规划</li>
+                  </ul>
+                </div>
               </article>
 
               <article class="service-card reveal">
-                <span class="service-tag">Skin Therapy</span>
-                <h3>肤质精修管理</h3>
-                <p>
-                  围绕暗沉、毛孔、细纹、敏感泛红与光泽感不足，建立更清晰的皮肤管理路径。
-                </p>
-                <ul class="service-list">
-                  <li>肤质检测与分型分析</li>
-                  <li>阶段式护理与节律安排</li>
-                  <li>更适合社交场景的上镜感提升</li>
-                </ul>
+                <img src="./assets/service-skin.jpg" alt="肤质精修管理服务图" />
+                <div class="service-body">
+                  <span class="service-tag">Skin Therapy</span>
+                  <h3>肤质精修管理</h3>
+                  <p>围绕暗沉、毛孔、细纹、敏感与光泽感不足，建立更清楚的皮肤管理路径和阶段目标。</p>
+                  <ul class="service-list">
+                    <li>肤质检测与问题分型</li>
+                    <li>更适合社交场景的上镜感</li>
+                    <li>阶段式护理与恢复建议</li>
+                  </ul>
+                </div>
               </article>
 
               <article class="service-card reveal">
-                <span class="service-tag">Contour Design</span>
-                <h3>精致轮廓定制</h3>
-                <p>
-                  适合希望整体更精致、五官比例更协调的人群，强调审美适配而不是模板化复制。
-                </p>
-                <ul class="service-list">
-                  <li>个性化轮廓分析</li>
-                  <li>风格化审美方向沟通</li>
-                  <li>自然不过度的精修逻辑</li>
-                </ul>
+                <img src="./assets/service-contour.jpg" alt="轮廓定制服务图" />
+                <div class="service-body">
+                  <span class="service-tag">Contour Design</span>
+                  <h3>精致轮廓定制</h3>
+                  <p>适合希望面部比例更协调、气质更精致的人群，强调个性化审美适配而不是模板复制。</p>
+                  <ul class="service-list">
+                    <li>风格化审美方向沟通</li>
+                    <li>比例分析与方案取舍</li>
+                    <li>自然不过度的精修逻辑</li>
+                  </ul>
+                </div>
               </article>
             </div>
           </div>
         </section>
 
-        <section id="trust">
+        <section id="doctor">
           <div class="container">
             <div class="section-head reveal">
               <div>
-                <div class="eyebrow">Professional Trust</div>
-                <h2>不是只强调效果，而是把信任建立在专业流程里。</h2>
+                <div class="eyebrow">Expert Team</div>
+                <h2>医美官网的核心，不是热闹，而是让用户敢把脸交给你。</h2>
               </div>
               <p>
-                医美官网最重要的不是“热闹”，而是让用户在 30 秒内感受到机构正规、审美在线、沟通清楚、服务可信。
+                我把“专家信任区”单独做成大模块，用医生形象、资质标签、沟通方式和理念文案一起建立权威感，
+                这样页面才像完整官方网站，而不是一个简单落地页。
               </p>
             </div>
 
-            <div class="trust-grid">
-              <div class="trust-card reveal">
-                <div class="doctor-card">
-                  <div class="doctor-avatar" aria-hidden="true"></div>
-                  <div class="doctor-meta">
+            <div class="doctor-layout">
+              <article class="doctor-card reveal">
+                <div class="doctor-grid">
+                  <img src="./assets/doctor-expert.jpg" alt="曜美医疗美容专家医生" />
+                  <div class="doctor-body">
+                    <div class="eyebrow">Chief Consultant</div>
                     <h3>王医生 · 面部年轻化主诊</h3>
                     <p>
-                      专注面部精细化评估与年轻化方案设计，擅长以自然、克制、长期主义的方式帮助顾客管理状态感。
+                      专注面部精细化评估与年轻化方案设计，擅长在自然、克制、长期主义的框架下，
+                      帮助顾客实现更轻盈但更高级的状态改变。
                     </p>
+
+                    <div class="doctor-meta">
+                      <span>高端私密面诊</span>
+                      <span>审美评估先行</span>
+                      <span>长期维护逻辑</span>
+                    </div>
+
+                    <div class="bullet-grid">
+                      <div class="bullet-card">
+                        <strong>先面诊，再建议</strong>
+                        <span>不急于销售项目，而是先厘清基础状态、目标与恢复接受度。</span>
+                      </div>
+                      <div class="bullet-card">
+                        <strong>方案透明</strong>
+                        <span>把项目方向、护理频率、恢复提示和长期维护逻辑讲清楚。</span>
+                      </div>
+                      <div class="bullet-card">
+                        <strong>审美克制</strong>
+                        <span>更关注气质提升与日常耐看度，而不是追求夸张变化。</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
+              </article>
 
-                <div class="trust-points">
-                  <div class="trust-point">
-                    <strong>面诊先行</strong>
-                    <span>先明确诉求、基础状态与可接受恢复周期，再决定是否适合进入项目方案。</span>
-                  </div>
-                  <div class="trust-point">
-                    <strong>方案透明</strong>
-                    <span>不做模糊承诺，强调项目适配度、护理节奏和后续维护逻辑。</span>
-                  </div>
-                  <div class="trust-point">
-                    <strong>审美克制</strong>
-                    <span>更关注气质提升、状态管理与日常耐看度，而不是夸张变化。</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="quote-card reveal">
+              <aside class="quote-card reveal">
                 <blockquote>
-                  “高端医美品牌真正需要卖的，不只是项目名称，而是用户在心里认定：这家机构值得我把脸交给她。”
+                  “高端医美官网真正要卖的，不只是项目名词，而是用户在心里认定：这家机构值得我预约、值得我信任、值得我到店。”
                 </blockquote>
                 <p>
-                  所以这个官网方向重点强化了三件事：视觉上的高级与洁净、内容上的专业与克制、路径上的预约承接与转化。
+                  所以我把这版网站做成了真正完整的官网 UI 结构：头图、项目、专家、环境、流程、FAQ、预约，全部齐全。
                 </p>
                 <p>
-                  你后续如果要投小红书、朋友圈广告、公众号文章、视频号名片页，都可以统一复用这套品牌表达。
+                  你后续可以直接继续扩成医生详情页、项目详情页、案例页、分院页，甚至接企业微信或表单系统做咨询转化。
                 </p>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section id="clinic">
+          <div class="container">
+            <div class="section-head reveal">
+              <div>
+                <div class="eyebrow">Clinic Environment</div>
+                <h2>环境不是陪衬，它本身就是高端医美信任感的一部分。</h2>
+              </div>
+              <p>
+                我按完整 UI 稿把院内环境做成了正式官网画廊模块。
+                这能明显提升页面完整度，也更符合医美品牌用户对空间与服务感的预期。
+              </p>
+            </div>
+
+            <div class="gallery-grid">
+              <div class="gallery-main">
+                <article class="gallery-card gallery-large reveal">
+                  <img src="./assets/interior-lobby.jpg" alt="曜美医疗美容院内大厅" />
+                  <div class="gallery-label">轻奢接待大厅 · 品牌第一印象</div>
+                </article>
+              </div>
+              <div class="gallery-stack">
+                <article class="gallery-card gallery-small reveal">
+                  <img src="./assets/interior-lounge.jpg" alt="曜美医疗美容咨询区" />
+                  <div class="gallery-label">私密咨询区 · 放松沟通体验</div>
+                </article>
+                <article class="gallery-card gallery-small reveal">
+                  <img src="./assets/ui-mockup-full.jpg" alt="医美官网完整UI设计稿" />
+                  <div class="gallery-label">完整 UI 设计稿 · 作为本次官网落地参考</div>
+                </article>
               </div>
             </div>
           </div>
@@ -1005,52 +1130,36 @@
           <div class="container">
             <div class="section-head reveal">
               <div>
-                <div class="eyebrow">Experience Flow</div>
-                <h2>把医美体验拆成用户真正关心的每一步。</h2>
+                <div class="eyebrow">Treatment Journey</div>
+                <h2>把用户真正关心的流程讲清楚，页面才会更容易成交。</h2>
               </div>
               <p>
-                比起单纯堆项目名称，官网更应该解释“你来这里之后会发生什么”，这样更容易减少犹豫、提升咨询率。
+                这一段是完整官网里很关键的服务流程区。很多医美站点只写项目名，不解释流程，
+                用户就很难迈出预约这一步。
               </p>
             </div>
 
-            <div class="environment">
-              <div class="environment-photo reveal">
-                <img src="./assets/hero-medspa.jpg" alt="曜美医疗美容空间氛围图" />
-              </div>
-
-              <div class="journey">
-                <article class="journey-card reveal">
-                  <div class="journey-index">01</div>
-                  <div>
-                    <h3>预约建联</h3>
-                    <p>通过官网、微信或电话预约，提前了解诉求方向与时间安排，匹配合适接待与面诊流程。</p>
-                  </div>
-                </article>
-
-                <article class="journey-card reveal">
-                  <div class="journey-index">02</div>
-                  <div>
-                    <h3>专业面诊</h3>
-                    <p>围绕基础状态、需求重点与审美倾向进行沟通，不急于销售，先建立共识与信任。</p>
-                  </div>
-                </article>
-
-                <article class="journey-card reveal">
-                  <div class="journey-index">03</div>
-                  <div>
-                    <h3>个性化方案</h3>
-                    <p>给出阶段式建议，包括项目方向、护理频次、恢复提示与长期维护逻辑。</p>
-                  </div>
-                </article>
-
-                <article class="journey-card reveal">
-                  <div class="journey-index">04</div>
-                  <div>
-                    <h3>术后管理</h3>
-                    <p>通过复诊沟通与护理建议，帮助用户稳定节奏，更关注长期状态而不是一次性刺激消费。</p>
-                  </div>
-                </article>
-              </div>
+            <div class="timeline-grid">
+              <article class="timeline-card reveal">
+                <div class="timeline-index">01</div>
+                <h3>预约建联</h3>
+                <p>通过官网、微信或电话快速建立联系，提前了解主要诉求和预计到院时间。</p>
+              </article>
+              <article class="timeline-card reveal">
+                <div class="timeline-index">02</div>
+                <h3>专业面诊</h3>
+                <p>围绕基础状态、审美方向、预算节奏与恢复接受度进行一对一沟通。</p>
+              </article>
+              <article class="timeline-card reveal">
+                <div class="timeline-index">03</div>
+                <h3>个性化方案</h3>
+                <p>输出更适合你的项目方向、阶段安排、护理建议和长期维护思路。</p>
+              </article>
+              <article class="timeline-card reveal">
+                <div class="timeline-index">04</div>
+                <h3>术后管理</h3>
+                <p>通过复诊和术后建议帮助用户稳定节奏，避免一次性消费心智。</p>
+              </article>
             </div>
           </div>
         </section>
@@ -1060,69 +1169,89 @@
             <div class="section-head reveal">
               <div>
                 <div class="eyebrow">FAQ</div>
-                <h2>把顾虑说透，咨询意愿才会更高。</h2>
+                <h2>一个完整官网，必须提前回答用户心里最常见的犹豫点。</h2>
               </div>
               <p>
-                这部分专门用来承接“想做但还不敢咨询”的用户，把官网从展示页变成真正能转化的沟通入口。
+                我保留了 FAQ 模块，因为它是很强的转化工具。
+                用户如果只看图，很难下决心；但看到这些问题被提前解释，咨询率会明显更高。
               </p>
             </div>
 
-            <div class="faq">
-              <article class="faq-item reveal">
+            <div class="faq-grid">
+              <article class="faq-card reveal">
                 <h3>第一次做医美，适合直接预约吗？</h3>
-                <p>可以。官网的核心作用之一，就是先让你带着问题来沟通，再决定是否适合做项目，而不是先做项目再补理解。</p>
+                <p>可以。官网的意义之一，就是让你带着问题来沟通，再决定是否适合进入具体项目。</p>
               </article>
-              <article class="faq-item reveal">
-                <h3>如果我不确定要做什么项目怎么办？</h3>
-                <p>这正是面诊的价值。我们更强调需求拆解和状态评估，而不是让用户自己先学会所有项目名词。</p>
+              <article class="faq-card reveal">
+                <h3>如果我不确定做什么项目怎么办？</h3>
+                <p>这正是面诊的价值。我们更强调需求拆解与状态评估，而不是让用户先学会所有项目名词。</p>
               </article>
-              <article class="faq-item reveal">
-                <h3>能不能只做皮肤管理，不做轮廓项目？</h3>
-                <p>可以。官网结构已经把年轻化、肤质精修和轮廓定制拆开，便于按不同客群承接咨询。</p>
+              <article class="faq-card reveal">
+                <h3>可以只做肤质管理，不做轮廓项目吗？</h3>
+                <p>当然可以。官网已经把年轻化、肤质管理和轮廓设计拆开，便于不同需求单独承接。</p>
               </article>
-              <article class="faq-item reveal">
-                <h3>官网后续还能继续扩展吗？</h3>
-                <p>可以继续增加案例页、医生页、项目详情页、微信引流按钮、在线预约表单和多城市分院页。</p>
+              <article class="faq-card reveal">
+                <h3>后续还能继续扩展这个站点吗？</h3>
+                <p>可以继续增加医生页、案例页、项目详情页、表单系统、企业微信入口和多院区页面。</p>
               </article>
             </div>
           </div>
         </section>
 
         <section id="contact">
-          <div class="container contact">
+          <div class="container contact-grid">
             <article class="contact-card reveal">
-              <div class="eyebrow">Contact</div>
-              <h3>把官网变成你的稳定获客入口。</h3>
+              <div class="eyebrow">Brand Contact</div>
+              <h3>这才是一套完整的医美官方网站，而不是一张单独的图片。</h3>
               <p>
-                如果你是医美机构老板，这个页面已经具备“品牌展示 + 咨询承接 + 信任建立”的基础结构。上线后就能用于名片页、朋友圈简介链接、公众号菜单和广告投放落地。
+                现在这版已经具备完整官网的主体结构。你后续只要把品牌名、医生信息、电话、地址、微信二维码、
+                营业时间和真实项目价格策略替换进去，就可以继续商用。
               </p>
+
               <div class="contact-list">
                 <span><strong>机构名称</strong>曜美医疗美容</span>
                 <span><strong>咨询方式</strong>微信预约 / 电话预约 / 到院面诊</span>
                 <span><strong>营业时间</strong>周一至周日 10:00 - 20:00</span>
-                <span><strong>建议动作</strong>将 CTA 接到微信、表单或客服系统</span>
+                <span><strong>适用场景</strong>品牌官网 / 投流落地页 / 名片页 / 公众号菜单页</span>
               </div>
             </article>
 
             <article class="contact-card contact-highlight reveal">
-              <div class="eyebrow">Ready To Convert</div>
-              <h3>现在就用这套官网承接高意向客户。</h3>
+              <div class="eyebrow">Book Consultation</div>
+              <h3>现在就把这套官网用于预约转化。</h3>
               <p>
-                页面已经用高端、洁净、专业、适合医美转化的视觉语言搭好。后续只需要替换成你的真实品牌名、医生信息、地址、电话和微信二维码，就能正式商用。
+                我已经把它发布到了 GitHub 和 Cloudflare。
+                如果你要继续往商用落地推进，下一步最值得加的是在线预约表单、企业微信入口和真实案例展示。
               </p>
-              <div class="contact-actions">
-                <a class="cta" href="tel:400-800-8899">电话咨询</a>
-                <a class="cta-ghost" href="mailto:hello@yaomei-clinic.com">发送邮件</a>
-              </div>
+
+              <form class="contact-form" action="#" method="post">
+                <div class="field-row">
+                  <input class="field" type="text" placeholder="您的称呼" />
+                  <input class="field" type="text" placeholder="联系电话" />
+                </div>
+                <div class="field-row">
+                  <input class="field" type="text" placeholder="想咨询的方向" />
+                  <input class="field" type="text" placeholder="预计到院时间" />
+                </div>
+                <textarea class="field" placeholder="请简单描述您的需求，例如：想改善面部疲态、肤色暗沉、轮廓不够精致等"></textarea>
+                <div style="display:flex;flex-wrap:wrap;gap:12px;">
+                  <a class="btn" href="tel:400-800-8899">电话咨询</a>
+                  <a class="btn-secondary" href="mailto:hello@yaomei-clinic.com">发送邮件</a>
+                </div>
+              </form>
             </article>
           </div>
         </section>
       </main>
 
+      <div class="floating-mobile">
+        <a class="btn" href="#contact">立即预约面诊</a>
+      </div>
+
       <footer class="footer">
         <div class="container footer-inner">
           <span>© 2026 曜美医疗美容. All rights reserved.</span>
-          <span>官网视觉方向：高端轻奢 + 专业信任 + 强预约转化</span>
+          <span>完整官网 UI 设计稿已落地为真实站点，并已发布到 GitHub / Cloudflare。</span>
         </div>
       </footer>
     </div>
@@ -1132,11 +1261,11 @@
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
+              entry.target.classList.add("visible");
             }
           });
         },
-        { threshold: 0.18 }
+        { threshold: 0.16 }
       );
 
       document.querySelectorAll(".reveal").forEach((node) => observer.observe(node));
