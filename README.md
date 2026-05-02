@@ -1,5 +1,4 @@
 # yimei
-
 Premium medical aesthetics website built for deployment-ready marketing pages.
 
 ## Structure
