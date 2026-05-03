@@ -4,39 +4,19 @@ import assert from "node:assert/strict";
 
 const html = await readFile(new URL("./index.html", import.meta.url), "utf8");
 
-const includes = (text) => {
-  assert.match(html, new RegExp(text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
-};
-
-const excludes = (text) => {
-  assert.doesNotMatch(html, new RegExp(text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
-};
-
-test("renders the GEO premium course brand and conversion hero", () => {
+test("renders the transplanted knowledge-commerce brand and hero", () => {
   for (const text of [
-    "知付岛 GEO 学院",
-    "别让你的课程，",
-    "卡在 AI 搜索之外",
-    "GEO 精优课",
-    "让你的知识付费产品被 AI 搜到、讲清、推荐",
+    "知付岛 AI 学院",
+    "别让你的经验",
+    "卡在不会卖课上",
+    "课程爆改对比",
+    "普通人把经验做成可售卖课程",
   ]) {
-    includes(text);
+    assert.match(html, new RegExp(text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
   }
 });
 
-test("frames GEO as the knowledge-commerce growth system", () => {
-  for (const text of [
-    "做知识付费，下一轮流量入口叫 GEO",
-    "把你的课程，铺进 AI 会引用的答案系统",
-    "不是多发内容，而是让 AI 懂你、信你、推荐你",
-    "从 0 到 1 搭建 GEO 获客闭环",
-    "这门精优课，承载的是课程成交责任",
-  ]) {
-    includes(text);
-  }
-});
-
-test("keeps the conversion sections and interaction model", () => {
+test("includes the knowledge-commerce conversion sections", () => {
   for (const id of [
     "how-it-works",
     "features",
@@ -49,6 +29,18 @@ test("keeps the conversion sections and interaction model", () => {
     assert.match(html, new RegExp(`id="${id}"`));
   }
 
+  for (const text of [
+    "做知识付费，最怕有本事但卖不出去",
+    "这一次，把课程的“成交系统”搭起来",
+    "看着爽？等你亲手做出第一套课，才叫真的爽！",
+    "这一套课，省掉你摸索3年的弯路",
+    "丰俭由人，选择最适合你的起步方式",
+  ]) {
+    assert.match(html, new RegExp(text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+  }
+});
+
+test("keeps the source design language while removing the old industry", () => {
   for (const marker of [
     "SmileySans-Oblique",
     "@keyframes fadeInUp",
@@ -59,26 +51,17 @@ test("keeps the conversion sections and interaction model", () => {
     "course-dashboard",
     "case-before",
     "case-after",
-    "type=\"range\"",
-    "aria-label=\"GEO 可见度改造对比滑块\"",
   ]) {
-    includes(marker);
+    assert.match(html, new RegExp(marker.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+  }
+
+  for (const oldText of ["BeginToGo", "外贸", "老破小", "SOHO", "独立站", "建站神器", "B2B 网站"]) {
+    assert.doesNotMatch(html, new RegExp(oldText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
   }
 });
 
-test("removes the old generic course and unrelated industries", () => {
-  for (const oldText of [
-    "BeginToGo",
-    "外贸",
-    "老破小",
-    "SOHO",
-    "独立站",
-    "建站神器",
-    "B2B 网站",
-    "普通人知识产品孵化课",
-    "把经验打包成一门能成交的课",
-    "我的多年经验分享课",
-  ]) {
-    excludes(oldText);
-  }
+test("keeps responsive behavior and comparison interaction", () => {
+  assert.match(html, /type="range"/);
+  assert.match(html, /@media\s*\(max-width:\s*760px\)/);
+  assert.match(html, /aria-label="课程改造对比滑块"/);
 });
